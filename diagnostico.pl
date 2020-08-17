@@ -1,9 +1,6 @@
 main:-
-    write('Bienvenidos'),nl,
-    write('Segun la respuestas dadas tendra su resultado:'),nl,
-    enfermedades(Enter),nl,
-    write('De acuerdo con sus respuestas,usted padece de: '),nl,
-    write(Enter).
+    enfermedades(Enfermedades),
+	Enfermedades.
 
 enfermedades(colesterol):- colesterol,!.
 enfermedades(diabetes):- diabetes,!.
@@ -11,67 +8,66 @@ enfermedades(ebola):-ebola,!.
 enfermedades(gastritis):-gastritis,!.
 enfermedades(neumonia):-neumonia,!.
 enfermedades(parkinson):-parkinson,!.
-enfermedades('No estoy entrenado para darte ese diagnostico').
-
+enfermedades('No estoy entrenado para darte ese diagnostico.').
 
 colesterol :-
 	tiene_colesterol,
-	pregunta('¿Tiene hinchazon en alguna extremidad?'),
-	pregunta('¿Tiene perdida del equilibrio?'),
-	pregunta('¿Tiene dolor de cabeza?'),
-	pregunta('¿Tiene amarillos los ojos?'),
-	pregunta('¿Tiene adormecimiento en alguna extremidad?'),
-	pregunta('¿Tiene agitacion,en especial al caminar o al realizar actividades leve?'),
-	pregunta('¿Tiene dolor en el pecho?').
+	pregunta('Â¿Tiene hinchazon en alguna extremidad?'),
+	pregunta('Â¿Tiene perdida del equilibrio?'),
+	pregunta('Â¿Tiene dolor de cabeza?'),
+	pregunta('Â¿Tiene amarillos los ojos?'),
+	pregunta('Â¿Tiene adormecimiento en alguna extremidad?'),
+	pregunta('Â¿Tiene agitacion,en especial al caminar o al realizar actividades leve?'),
+	pregunta('Â¿Tiene dolor en el pecho?').
 
 diabetes :-
 	tiene_diabetes,
-	pregunta('¿Padece de orina frecuente?'),
-	pregunta('¿Tiene sed constante?'),
-	pregunta('¿Tiene hambre excesiva?'),
-	pregunta('¿Tiene perdida de peso inexplicable?'),
-	pregunta('¿Se siente fatigado?'),
-	pregunta('¿Tiene irritabilidad?').
+	pregunta('Â¿Padece de orina frecuente?'),
+	pregunta('Â¿Tiene sed constante?'),
+	pregunta('Â¿Tiene hambre excesiva?'),
+	pregunta('Â¿Tiene perdida de peso inexplicable?'),
+	pregunta('Â¿Se siente fatigado?'),
+	pregunta('Â¿Tiene irritabilidad?').
 
 ebola :-
 	tiene_ebola,
-	pregunta('¿Presenta dolores musculares?'),
-	pregunta('¿Tiene vómito y diarrea?'),
-	pregunta('¿Presenta erupciones cutaneas?'),
-	pregunta('¿Siente debilidad intensa?'),
-	pregunta('¿Tiene dolor de garganta?').
+	pregunta('Â¿Presenta dolores musculares?'),
+	pregunta('Â¿Tiene vomito y diarrea?'),
+	pregunta('Â¿Presenta erupciones cutaneas?'),
+	pregunta('Â¿Siente debilidad intensa?'),
+	pregunta('Â¿Tiene dolor de garganta?').
 
 gastritis :-
 	tiene_gastritits,
-	pregunta('¿Tiene acidez estomacal?'),
-	pregunta('¿Presenta aerofagia?'),
-	pregunta('¿Tiene ausencia de hambre que en ocasiones puede producir perdida de peso?'),
-	pregunta('¿Presenta heces de color negro o con sangrado?'),
-	pregunta('¿Tiene náuseas?').
+	pregunta('Â¿Tiene acidez estomacal?'),
+	pregunta('Â¿Presenta aerofagia?'),
+	pregunta('Â¿Tiene ausencia de hambre que en ocasiones puede producir perdida de peso?'),
+	pregunta('Â¿Presenta heces de color negro o con sangrado?'),
+	pregunta('Â¿Tiene nauseas?').
 
 neumonia :-
 	tiene_neumonia,
-	pregunta('¿Tiene dolores articulares?'),
-	pregunta('¿Ha tenido tos constate los ultimos dos dias?'),
-	pregunta('¿Presenta dificultad para respirar?').
+	pregunta('Â¿Tiene dolores articulares?'),
+	pregunta('Â¿Ha tenido tos constate los ultimos dos dias?'),
+	pregunta('Â¿Presenta dificultad para respirar?').
 
 parkinson :-
 	tiene_parkinson,
-	pregunta('¿Tiene dolores articulares?'),
-	pregunta('¿Ha notado algún cambio perdida de movimiento espontáneo y automático en alguna extremidad?'),
-	pregunta('¿Ha presentado rigidez severa en alguna region muscular?'),
-	pregunta('¿Sufre de depresión o ha utilizado farmacos para tratar una enfermedad semejante?'),
-	pregunta('¿Presenta algun trastorno en el sueño?').
+	pregunta('Â¿Tiene dolores articulares?'),
+	pregunta('Â¿Ha notado algÃºn cambio perdida de movimiento espontaneo y automatico en alguna extremidad?'),
+	pregunta('Â¿Ha presentado rigidez severa en alguna region muscular?'),
+	pregunta('Â¿Sufre de depresiÃ³n o ha utilizado farmacos para tratar una enfermedad semejante?'),
+	pregunta('Â¿Presenta algun trastorno en el sueÃ±o?').
 
 
 %desconocido :- se_desconoce_enfermedad.
 
-tiene_colesterol:-	pregunta('¿Tiene vision borrosa?').
-tiene_diabetes:-	pregunta('¿Tiene vision borrosa?').
-tiene_ebola:-		pregunta('¿Tiene fiebre?').
-tiene_gastritits:-	pregunta('¿Tiene dolor abdominal?').
-tiene_neumonia:-	pregunta('¿Tiene fiebre?').
-tiene_parkinson:-	pregunta('¿Presenta temblor en alguna de las extremidades superiores del cuerpo?').
+tiene_colesterol:-	pregunta('Â¿Tiene vision borrosa?').
+tiene_diabetes:-	pregunta('Â¿Tiene vision borrosa?').
+tiene_ebola:-		pregunta('Â¿Tiene fiebre?').
+tiene_gastritits:-	pregunta('Â¿Tiene dolor abdominal?').
+tiene_neumonia:-	pregunta('Â¿Tiene fiebre?').
+tiene_parkinson:-	pregunta('Â¿Presenta temblor en alguna de las extremidades superiores del cuerpo?').
 
 preguntar(Problema,X):-
        ((X==si)->assert(si(Problema)); assert(no(Problema)),fail).
@@ -79,7 +75,7 @@ preguntar(Problema,X):-
 
 pregunta(S):-
     write(S),
-    write('si/no:'),
+    write('(si/no) '),
     read(Answer),
     ((Answer==si)->true; (fail;preguntar(S,Answer))).
 
