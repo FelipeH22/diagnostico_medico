@@ -16,7 +16,7 @@ migraña:-
     pregunta('¿Tiene sensibilidad a la luz, sonido o al olor de ciertos productos?'),
     pregunta('¿Tiene nauseas?').
 
-cefalea:-
+cefalea_comun:-
     tiene_cefalea.
 
 amigdalitis:-
