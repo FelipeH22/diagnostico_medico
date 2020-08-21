@@ -135,9 +135,10 @@
         titulo.innerHTML = zonas_cuerpo[el].seccion;
         console.log(zonas_cuerpo[el].seccion);
         zonas_cuerpo[el].sintomas.map( el => {
-            console.log(el)
-            //elementoLista.appendChild(el)
-            //lista.appendChild(el)
+                console.log(el)
+                document.querySelector('.elementoLista').append(`${el}`);
+                //elementoLista.appendChild(el)
+                //lista.appendChild(el)
             }
         )
     }
