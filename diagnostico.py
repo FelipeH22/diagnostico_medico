@@ -12,12 +12,12 @@ opciones = {
 	6: "Dolor en las extremidades"
 }
 archivos = {
-	"Dolor en la cabeza":"cabeza.pl",
-	"Dolor en la garganta":"garganta.pl",
-	"Dolor en el pecho":"pecho.pl",
-	"Dolor en la zona del estómago":"estomago.pl",
-	"Dolor en la espalda baja":"espalda.pl",
-	"Dolor en las extremidades":"extremidades.pl"
+	"Dolor en la cabeza":"prolog/cabeza.pl",
+	"Dolor en la garganta":"prolog/garganta.pl",
+	"Dolor en el pecho":"prolog/pecho.pl",
+	"Dolor en la zona del estómago":"prolog/estomago.pl",
+	"Dolor en la espalda baja":"prolog/espalda.pl",
+	"Dolor en las extremidades":"prolog/extremidades.pl"
 }
 
 print(opciones,"\n")
