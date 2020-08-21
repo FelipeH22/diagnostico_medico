@@ -1,4 +1,7 @@
 from pyswip import *
+from conexion_db import consulta
+from os import system
+
 prolog = Prolog()
 opciones = {
 	1: "Dolor en la cabeza",
@@ -16,17 +19,21 @@ archivos = {
 	"Dolor en la espalda baja":"espalda.pl",
 	"Dolor en las extremidades":"extremidades.pl"
 }
+
 print(opciones,"\n")
 prolog.consult(archivos[opciones[int(input("Digite el número, según la opción donde siente las molestias \n"))]])
+system("cls")
 
-print('Bienvenidos')
+print('\nBienvenidos')
 print('Segun la respuestas dadas tendra su resultado:')
 for result in prolog.query("enfermedades(Enfermedad)"):
 	resultado = result['Enfermedad']
+system("cls")
 if resultado!="En mi base de conocimientos no figura ninguna enfermedad para la serie de sintomas descritos.":
 	if '_' in resultado:
 		resultado=resultado.replace('_',' ')
-	print('De acuerdo con sus respuestas, usted puede padecer de: '+resultado)
+	print('De acuerdo con sus respuestas, usted puede padecer de: '+resultado+"\n")
+	consulta(resultado)
 else:
 	print(resultado)
-print('Tenga presente que este diagnóstico no equivale a un diagnóstico profesional. Por tanto, se recomienda acudir al médico en caso de presentar complicaciones')
+print('\nTenga presente que este diagnóstico no equivale a un diagnóstico profesional. Por tanto, se recomienda acudir al médico en caso de presentar complicaciones y sobre todo no automedicarse')

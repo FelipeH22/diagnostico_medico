@@ -2,21 +2,21 @@ main:-
     enfermedades(Enfermedades),
 	Enfermedades.
 
-enfermedades(migraña):-migraña,!.
+enfermedades(migrana):-migrana,!.
 enfermedades(cefalea_comun):-cefalea,!.
 enfermedades('En mi base de conocimientos no figura ninguna enfermedad para la serie de sintomas descritos.').
 
-migraña:-
-    tiene_migraña,
-    pregunta('¿Dolor que palpita o late?'),
-    pregunta('¿Tiene sensibilidad a la luz, sonido o al olor de ciertos productos?'),
-    pregunta('¿Tiene nauseas?').
+migrana:-
+    tiene_migrana,
+    pregunta('ï¿½Dolor que palpita o late?'),
+    pregunta('ï¿½Tiene sensibilidad a la luz, sonido o al olor de ciertos productos?'),
+    pregunta('ï¿½Tiene nauseas?').
 
 cefalea:-
     tiene_cefalea.
 
-tiene_migraña:- pregunta('¿Tiene dolor de cabeza intenso?').
-tiene_cefalea:- pregunta('¿Tiene dolor de cabeza generalizado?').
+tiene_migrana:- pregunta('ï¿½Tiene dolor de cabeza intenso?').
+tiene_cefalea:- pregunta('ï¿½Tiene dolor de cabeza generalizado?').
 
 preguntar(Problema,X):-
        ((X==si)->assert(si(Problema)); assert(no(Problema)),fail).
