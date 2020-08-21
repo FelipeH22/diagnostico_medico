@@ -4,7 +4,7 @@ opciones = {
 	1: "Dolor en la cabeza",
 	2: "Dolor en la garganta",
 	3: "Dolor en el pecho",
-	4: "Dolor en la zona del estómago",
+	4: "Dolor en la zona del abdominal",
 	5: "Dolor en la espalda baja",
 	6: "Dolor en las extremidades"
 }
@@ -18,7 +18,6 @@ archivos = {
 }
 print(opciones,"\n")
 prolog.consult(archivos[opciones[int(input("Digite el número, según la opción donde siente las molestias \n"))]])
-#prolog.consult('diagnostico.pl')
 
 print('Bienvenidos')
 print('Segun la respuestas dadas tendra su resultado:')
