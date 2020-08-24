@@ -1,0 +1,191 @@
+@mixin transit ($transi, $transitime) {
+  -webkit-transition: $transi $transitime;
+  -moz-transition: $transi $transitime;
+  -ms-transition: $transi $transitime;
+  -o-transition: $transi $transitime;
+  transition: $transi $transitime;
+}
+@mixin filt ($filt) {
+  -webkit-filter: $filt;
+  -moz-filter: $filt;
+  -ms-filter: $filt;
+  -o-filter: $filt;
+  filter: $filt;
+}
+@mixin transformix ($transieffe) {
+  -webkit-transform: $transieffe;
+  -moz-transform: $transieffe;
+  -ms-transform: $transieffe;
+  -o-transform: $transieffe;
+  transform: $transieffe;
+}
+@mixin transforsty ($transty) {
+  -webkit-transform-style: $transty;
+  -moz-transform-style: $transty;
+  -ms-transform-style: $transty;
+  -o-transform-style: $transty;
+  transform-style: $transty;
+}
+@mixin efftranslate($transx, $transy) {
+  -webkit-transform: translate($transx, $transy);
+  -moz-transform: translate($transx, $transy);
+  -ms-transform: translate($transx, $transy);
+  -o-transform: translate($transx, $transy);
+  transform: translate($transx, $transy);
+}
+@mixin zoomimag ($zoomimaY, $zoomimaX) {
+  -webkit-transform: scale($zoomimaY, $zoomimaX);
+  -moz-transform: scale($zoomimaY, $zoomimaX);
+  -ms-transform: scale($zoomimaY, $zoomimaX);
+  -o-transform: scale($zoomimaY, $zoomimaX);
+  transform: scale($zoomimaY, $zoomimaX);
+}
+@mixin rotarenY($roty) {
+  -webkit-transform: rotateY($roty);
+  -moz-transform: rotateY($roty);
+  -ms-transform: rotateY($roty);
+  -o-transform: rotateY($roty);
+  transform: rotateY($roty);
+}
+@mixin rotate($rot) {
+  -webkit-transform: rotate($rot);
+  -moz-transform: rotate($rot);
+  -ms-transform: rotate($rot);
+  -o-transform: rotate($rot);
+  transform: rotate($rot);
+}
+@mixin towtrans($trans1, $trans1para, $trans2, $trans2para) {
+  -webkit-transform: $trans1+unquote("("$trans1para")") $trans2+unquote("("$trans2para")");
+  -moz-transform: $trans1+unquote("("$trans1para")") $trans2+unquote("("$trans2para")");
+  -ms-transform: $trans1+unquote("("$trans1para")") $trans2+unquote("("$trans2para")");
+  -o-transform: $trans1+unquote("("$trans1para")") $trans2+unquote("("$trans2para")");
+  transform: $trans1+unquote("("$trans1para")") $trans2+unquote("("$trans2para")");
+}
+@mixin quitar_anim() {
+  -webkit-animation: none !important;
+  -moz-animation: none !important;
+  -ms-animation: none !important;
+  -o-animation: none !important;
+  animation: none !important;
+}
+@mixin fix_flicker() {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+@mixin animaciones($animname, $animdura:1s, $animtiming:ease, $animdelay:0s, $animiter:infinite, $animdir:alternate, $animori:center) {
+  -webkit-animation: $animname $animdura $animtiming $animdelay $animiter $animdir;
+  -moz-animation: $animname $animdura $animtiming $animdelay $animiter $animdir;
+  -o-animation: $animname $animdura $animtiming $animdelay $animiter $animdir;
+  animation: $animname $animdura $animtiming $animdelay $animiter $animdir;
+  -webkit-transform-origin: $animori;
+  -moz-transform-origin: $animori;
+  -o-transform-origin: $animori;
+  transform-origin: $animori;
+}
+@mixin animacion_steps($animname, $animdura:1s, $animsteps:steps(0), $animiter:infinite, $animdir: normal) {
+  -webkit-animation: $animname $animdura $animsteps $animiter $animdir;
+  -moz-animation: $animname $animdura $animsteps $animiter $animdir;
+  -o-animation: $animname $animdura $animsteps $animiter $animdir;
+  animation: $animname $animdura $animsteps $animiter $animdir;
+}
+@mixin aspect-ratio($width, $height) {
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+@mixin centrarabsol() {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+@mixin insidebor($borwidt, $col) {
+  -webkit-box-shadow: inset 0 0 0 $borwidt $col;
+  -moz-box-shadow: inset 0 0 0 $borwidt $col;
+  box-shadow: inset 0 0 0 $borwidt $col;
+}
+@mixin shadow($shad) {
+  -webkit-box-shadow: $shad;
+  -moz-box-shadow: $shad;
+  -o-box-shadow: $shad;
+  box-shadow: $shad;
+}
+@mixin textshadow($shad) {
+  -webkit-text-shadow: $shad;
+  -moz-text-shadow: $shad;
+  -o-text-shadow: $shad;
+  text-shadow: $shad;
+}
+@mixin perspect($pers) {
+  -webkit-perspective: $pers;
+  -moz-perspective: $pers;
+  -o-perspective: $pers;
+  perspective: $pers;
+}
+@mixin borpng ($xdist, $ydist, $desen, $col) {
+  -webkit-filter: drop-shadow($xdist $ydist $desen $col);
+  -moz-filter: drop-shadow($xdist $ydist $desen $col);
+  -o-filter: drop-shadow($xdist $ydist $desen $col);
+  filter: drop-shadow($xdist $ydist $desen $col);
+}
+// Button styles
+@mixin botrounded ($col, $borco, $foncol) {
+  width: 60px;
+  height: 60px;
+  background-color: $col;
+  border: solid 5px $borco;
+  color: $foncol;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 1.6em;
+  font-weight: bold;
+  padding: 6px;
+  cursor: pointer;
+}
+@mixin botrounded-peq ($col, $borco, $foncol) {
+  width: 35px;
+  height: 35px;
+  background-color: $col;
+  border: solid 3px $borco;
+  color: $foncol;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 2px;
+  cursor: pointer;
+}
+// Actividades seleccion checkbox
+@mixin activeval($backco, $col, $backhov, $colhov, $chkback, $chkcol) {
+  label {
+    background: $backco;
+    color: $col;
+
+    &:hover {
+      color: $colhov;
+      background: $backhov;
+    }
+  }
+
+  input[type=checkbox]:checked+label,
+  input[type=radio]:checked+label {
+    background: $chkback;
+    color: $chkcol;
+  }
+}

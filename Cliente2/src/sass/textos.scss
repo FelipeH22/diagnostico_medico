@@ -1,0 +1,55 @@
+p{
+  font-size: 1rem;
+  text-align: left;
+  color: $color-text;
+}
+ul{
+  font-size: 1rem;
+  text-align: left;
+  color: $color-text;
+}
+ul{
+  li{
+    font-size: 1em;
+    text-align: left;
+    color: $color-text;
+  }
+}
+h1{
+  font-size: 1.5em;
+  color: $color-text;
+}
+h2{
+  font-size: 1.3em;
+  color: $color-text;
+}
+.text-primary{
+  color: $color-primary;
+}
+.text-inverted{
+  color: $color-inverted;
+}
+.fe-bold{
+  font-family: FontSpecial-Bold!important;
+}
+.fb-bold{
+  font-family: FontBase-Bold!important;
+}
+
+.texto1 {
+  background: white;
+  border: 1px solid $color-secondary;
+  border-radius: 5px;
+}
+
+.v-dialog p {
+  font-family: FontBase-Regular;
+}
+.txtdest{
+  color: #FFFF!important;
+}
+.text-dest{
+  padding: 10px;
+  border-radius: 5px;
+  // background: $color-complement-one;
+}

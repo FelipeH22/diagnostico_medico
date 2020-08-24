@@ -1,0 +1,11 @@
+{
+  "navshow": false,
+  "menubots": [{
+      "name": "Inicio",
+      "link": "/",
+      "pages": [0,0],
+      "active": true,
+      "subt": []
+    }
+  ]
+}

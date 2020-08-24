@@ -1,0 +1,11 @@
+.zoomIn-enter {
+  transform: scale(0);
+}
+
+.zoomIn-enter-to {
+  transform: scale(1);
+}
+
+.zoomIn-enter-active {
+  transition: transform 0.25s ease;
+}

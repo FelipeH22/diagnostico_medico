@@ -1,0 +1,31 @@
+// Contiene todo lo que afecte layout: padding, widths, heights, font-sizes
+// No contiene: font-families, colors
+.texto1 {
+  padding: 15px 10px;
+  margin: 10px;
+}
+
+// Ajustar fuente de los items del menú de navegación
+.v-navigation-drawer > .v-list:not(.v-list--dense) .v-list__tile {
+  font-size: 1rem;
+}
+
+// Esta clase convierte un div en un contenedor para elementos que tengan un tamaño mínimo,
+// en celulares permite hacer scroll sin salirse del layout y sin modificar el tamaño de su contenido
+// útil para tablas y svgs con texto. También puede aplicar para pantallas más grandes dependiendo del
+// tamaño mínimo.
+// --------------------
+// |                  |
+// |   ___________    |
+// |  |-----------|---|---------
+// |  |----img----|---|---img---
+// |  |-----------|---|---------
+// |  |-----------|---|---------
+// |    contenedor    |
+// |                  |
+// --------------------
+//       celular
+.scroll-container {
+    max-width: 100%;
+    overflow: auto;
+}

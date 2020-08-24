@@ -1,0 +1,288 @@
+/* CONTIENE:
+Imports
+Estilo de html, body y svg
+Tooltip
+Interacciones de hover -> .hvr .hvr-scale .hvr-float
+Estilo generals para tablas
+Estilos personalizados para tablas
+*/
+@import 'helpers/variables';
+@import 'animate';
+@import 'animations';
+@import 'transitions';
+@import 'small.scss';
+@import 'medium.scss';
+@import 'textos.scss';
+@import 'svg.scss';
+@import "hover.scss";
+@import "buttons.scss";
+@import "bgcolors.scss";
+
+
+body, html {
+  margin: 0; //Remueve bordes en blanco
+  overflow-y: hidden; //Corrige comportamiento por defecto de Vuetify de mostrar la barra de desplazamiento incluso si no hay desbordamiento
+  overflow: hidden;
+  @media (max-width: 600px) {
+    //font-size: 0.9rem; /Disminuye el tamaño de la fuente para celulares
+    overflow-y: auto;
+  }
+}
+
+svg{
+  max-height: 100%;
+  max-width: 100%;
+}
+.autoscroll {
+  overflow: auto;
+}
+.instruccion {
+  font-weight: bold;
+}
+
+/**************************** CONTENIDO PARA CADA PAGINA ******************************/
+.cont_page{
+  padding: 0px 15px;
+  margin-top: 50px;
+  // border: solid red;
+}
+
+/**************************** FIGURECAPTION ******************************/
+figcaption{ 
+  font-family: FontBase-Italic;
+  font-size: 9px;
+  color: #000C1A;
+  margin: 0;
+  padding: 0;
+}
+/**************************** TOOLTIP INTERACTIVO ******************************/
+
+
+.tooltip {
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 0 10px;
+  font-weight: bold;
+  display: inline-block;
+
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+}
+
+/**************************** INTERACCIONES HOVER ******************************/
+
+.hvr {
+  transition: all 200ms ease-in;
+  cursor: pointer;
+}
+
+.hvr-scale {
+  transition: all 0.25s ease-in;
+
+  &:hover {
+    transform: scale(1.1)
+  }
+
+  &:active {
+    transform: scale(1.0)
+  }
+}
+
+.hvr-float {
+  transition: all 0.25s ease-in;
+
+  &:hover {
+    transform: translateY(-3px)
+  }
+
+  &:active {
+    transform: translateY(3px)
+  }
+}
+
+.hvr-color {
+  background-color: $color-primary;
+
+  &:hover {
+    background-color: white;
+  }
+
+  &:active, &:checked {
+    background-color: $color-primary;
+  }
+}
+
+/***************** TABLES ***************/
+
+table, td, th {
+  border: 1px solid black;
+  border-collapse: collapse;
+  border-spacing: 0;
+  padding: 5px;
+  position: relative;
+  font-family: FontBase-Regular;
+  font-size: 1.05em;
+}
+
+th, caption {
+  font-weight: bold;
+}
+
+td, th {
+  background-clip: padding-box; //Pequeño ajuste para firefox, corrige bug de que los bordes no se muestren cuando el td tiene un color de fondo
+}
+
+.responsive-table {
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+.img-highlight {
+    filter: drop-shadow(0px 0px 4px gold);
+}
+
+
+
+// MODAL
+.modal-icon-title{
+  margin: 0;
+  padding: 0;
+  height: auto;
+  font-family: FontBase-Regular;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.bd-red{
+  border: solid red;
+}
+
+.nolist{
+  text-align: center;
+  ul{
+    list-style:square inside;//list-style: none!important;
+    margin: 0;
+    padding: 0;
+    li{
+      list-style:square inside;//list-style: none;
+    }
+  }
+}
+// CLASE PARA EL EVENTO DE NO PODER DAR CLICK ANTES DE LEER LOS DÍALOGOS ///
+.noclick{
+  pointer-events: none;
+  //opacity: 0.6!important;
+}
+
+// CLASE PARA LA DEFINICIÓN EN EL GLOSARIO
+.definicion{
+  ul{
+      margin-top: 10px;
+      li{
+          margin-top: 10px;
+      }
+  }
+
+}
+
+.pagina-curso {
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: 20%;
+  //height: 100vh;
+  overflow-y: auto;
+  transition: all 0.3s ease-in-out;
+  padding: 0px;
+
+  .contenido {
+      max-width: 100%;
+      width: 922px;
+      margin: auto;
+      position: relative;
+      //overflow: hidden;
+      min-height: calc(100vh - 50px);
+      height: auto;
+      padding: 0px;
+      //margin-top: 50px;
+
+  }
+  @media screen and (max-width: 700px) {
+      background-size: 70%;
+  }
+  @media screen and (max-width: 500px) {
+      background-size: 90%;
+  }
+}
+
+.cont-p-modal{
+  p{
+    font-size: 1.5rem;
+    font-family: FontBase-Regular;
+  }
+}
+
+p.actividad{
+  font-family: FontBase-SemiboldItalic;
+}
+li, ul{
+  list-style-position:outside !important;
+}
+
+
+.ejemp-ilustrativo{
+  padding-left: 20px;
+  border-bottom: 2px solid #fff;
+  border-top: 2px solid #fff;
+}
+.ejemp-ilustrativo-imagen{
+  border-right: 5px solid #fff;
+}
+.ejemp-ilustrativo-texto{
+  padding-left: 30px;
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
+  background: #e2e2e2;
+  border-right: 5px solid #fff;
+  border-bottom: 5px solid #fff;
+}
+
+.ejemp-ilustrativo p{
+font-size: 1rem;
+font-family: FontBase-Regular;
+}
+
+// Titulos
+
+h1{
+  font-family: FontBase-Bold;
+  font-size: 1.9rem;
+
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(90deg, $color-complement-two 0%,$color-secondary 100%)1;
+  -webkit-border-bottom: 3px solid transparent;
+  -webkit-border-image: linear-gradient(90deg, $color-complement-two 0%,$color-secondary 100%)1;
+  margin-bottom: 30px;
+}
+h2{
+  font-size: 1.7rem;
+  font-family: FontBase-SemiBold;
+}
+p{
+  font-size: 1.2rem;
+  font-family: FontBase-Regular;
+}
+
+//Listas
+
+
+
+p.actividad{
+  font-family: FontBase-SemiboldItalic;
+}
+
+.contenidoCurso{
+  margin-top: 50px;
+}
