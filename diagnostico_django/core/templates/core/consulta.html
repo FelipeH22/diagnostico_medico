@@ -1,0 +1,53 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}Consultar{% endblock %}
+{% block background %}{% endblock %}
+{% block headers %}
+  <h1>Diagnóstico Médico</h1>
+  <span class="subheading">Proyecto Final de Modelos II</span>
+{% endblock %}
+{% block content %}
+  <!-- Cabecera -->
+  <header class="ajustemenu masthead"  style="background-image: url({% static 'core/img/home-bg.jpg' %})">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Contenido Principal -->
+  <div class="container">
+    <div class="row  justify-content-center">
+      <div class="col-lg-11 col-md-11 mx-auto">
+        <div class="site-heading justify-content-center text-center">
+          <h1 class="">Consultar registro</h1>
+            <span class="subheading">
+              A continuación podrá ingresar el número de registro de su consulta de interés.
+            </span>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-5 justify-content-center">
+      <div class="col-lg-4 col-md-4">
+        <form class="" method="POST" action=""></form>
+          <h5 id="titulo">Ingrese el número de registro</h5>
+          <div class="form-group mt-5">
+            <label for="formGroupExampleInput">ID registro</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="12345">
+          </div>
+          <button type="submit" class="btn btn-info mt-5">Enviar</button>
+        </form>
+      </div>
+      <div class="col-lg-4 col-md-4 offset-lg-1">
+        <img class="img-fluid avatar" src="img/consultarregistro.jpg" alt="">
+      </div>
+    </div>
+  </div>
+{% endblock %}
