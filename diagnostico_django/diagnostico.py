@@ -17,12 +17,12 @@ opciones = {
 	6: "Dolor en las extremidades"
 }
 archivos = {
-	"Dolor en la cabeza":"prolog/cabeza.pl",
-	"Dolor en la garganta":"prolog/garganta.pl",
-	"Dolor en el pecho":"prolog/pecho.pl",
-	"Dolor en la zona abdominal":"prolog/estomago.pl",
-	"Dolor en la espalda baja":"prolog/espalda.pl",
-	"Dolor en las extremidades":"prolog/extremidades.pl"
+	"Dolor en la cabeza":"../prolog/cabeza.pl",
+	"Dolor en la garganta":"../prolog/garganta.pl",
+	"Dolor en el pecho":"../prolog/pecho.pl",
+	"Dolor en la zona abdominal":"../prolog/estomago.pl",
+	"Dolor en la espalda baja":"../prolog/espalda.pl",
+	"Dolor en las extremidades":"../prolog/extremidades.pl"
 }
 
 print("\n",opciones,"\n")

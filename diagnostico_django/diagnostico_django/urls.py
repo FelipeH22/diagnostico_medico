@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from diagnostico_django.diagnostico_django.vistas import muestra_pagina
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('diagnostico/',muestra_pagina)
 ]
