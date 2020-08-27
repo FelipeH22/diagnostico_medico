@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core',
     'register.apps.RegisterConfig',
+    'diagnostico.apps.DiagnosticoConfig',
 ]
 
 MIDDLEWARE = [
