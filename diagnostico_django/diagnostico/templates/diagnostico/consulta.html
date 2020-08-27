@@ -37,15 +37,27 @@
     <div class="row mt-5 justify-content-center">
       <div class="col-lg-4 col-md-4">
         <form class="" method="GET" action="">
-          {% csrf_token %}
-          <h5 id="titulo">Ingrese el número de registro</h5>
+          
+          <h5 id="titulo">Ingrese el nomrbe del síntoma</h5>
           <div class="form-group mt-5">
             <label for="formGroupExampleInput">ID registro</label>
-            <!--<input type="text" class="form-control" id="formGroupExampleInput" placeholder="12345">-->
-            {{form.as_p}}
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="12345" name="buscar">
           </div>
           <input type="submit" class="btn btn-info mt-5" value="Enviar" style="cursor: pointer;"/>
         </form>
+        <br>
+        {% if queryset != '' %}
+        {% for b in busqueda %}
+            <ul class="lista list-group">
+              <li id="elementoLista" class="elementoLista">
+                <h3>{{b.nombre}}</h3>
+                <p >{{b.descripcion}}</p>
+                <h4>Tratamiento</h4>
+                <p>{{b.tratamiento}}</p>
+              </li>
+            </ul>
+        {% endfor %}  
+        {% endif %}      
       </div>
       <div class="col-lg-4 col-md-4 offset-lg-1">
         <img class="img-fluid avatar" src="{% static 'core/img/consultarregistro.jpg' %}" alt="">
