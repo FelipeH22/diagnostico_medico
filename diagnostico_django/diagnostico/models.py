@@ -4,7 +4,7 @@ from django.db import models
 class Enfermedad(models.Model):
     nombre = models.CharField(max_length=200, verbose_name="nombre enfermedad")
     descripcion = models.TextField(verbose_name="descripción")
-    tratamietno = models.TextField(verbose_name="tratamiento")
+    tratamiento = models.TextField(verbose_name="tratamiento")
     created = models.DateField(auto_now_add = True, verbose_name="Fecha de creación")
     updated = models.DateField(auto_now = True, verbose_name="Fecha de modificación")
 

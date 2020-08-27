@@ -19,7 +19,8 @@ def consuta_diagnostico(request):
     if queryset:
         enfermedades = enfermedades.filter(
             Q(nombre__icontains = queryset) |
-            Q(descripcion__icontains = queryset)
+            Q(descripcion__icontains = queryset)|
+            Q(tratamiento__icontains = queryset)
         )
     contexto = {'busqueda':enfermedades}
     return render(request, "diagnostico/consulta.html", contexto)
