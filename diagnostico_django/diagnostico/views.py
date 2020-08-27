@@ -11,7 +11,17 @@ from .serializers import EnfermedadSerializer
 from rest_framework import viewsets
 
 def enfermedades(request):
-    enfermedades = list(Enfermedad.objects.all())
+    queryset = request.GET.get("listar")
+    enfermedades = Enfermedad.objects.all()
+    if queryset:
+        enfermedades = enfermedades.filter(
+            Q(nombre__icontains = queryset) |
+            Q(descripcion__icontains = queryset)|
+            Q(tratamiento__icontains = queryset)|
+            Q(section__icontains = queryset)
+        )
+    else:
+        enfermedades=[]
     contexto = {'enfermedades':enfermedades}
     return render(request, 'diagnostico/diagnostico.html',contexto)
 
@@ -28,11 +38,11 @@ def consuta_diagnostico(request):
             Q(tratamiento__icontains = queryset)|
             Q(section__icontains = queryset)
         )
+    else:
+        enfermedades=[]
     contexto = {'busqueda':enfermedades}
     return render(request, "diagnostico/consulta.html", contexto)
 
-def resultado(request):
-    return render(request, "diagnostico/resultado.html")
 
 
 class EnfermedadViewSet(viewsets.ModelViewSet):
