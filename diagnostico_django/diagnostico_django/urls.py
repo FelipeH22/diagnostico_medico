@@ -22,4 +22,9 @@ urlpatterns = [
     
     #paths core
     path('', include('core.urls')),
+    #paths registro
+    path('registro/', include('register.urls')),
 ]
+'''if settings.DEBUG:
+    fromdjango.conf.urls.static import static
+    urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)'''

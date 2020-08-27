@@ -10,5 +10,3 @@ def diagnostico(request):
 def consuta_diagnostico(request):
     return render(request, "core/consulta.html")
 
-def registro(request):
-    return render(request, "core/registro.html")
