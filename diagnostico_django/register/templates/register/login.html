@@ -1,0 +1,51 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}Registro{% endblock %}
+
+{% block content %}
+<!-- Cabecera -->
+<header class="ajustemenu masthead"  style="background-image: url({% static 'core/img/home-bg.jpg' %})">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto ">
+        <div class="site-heading">
+          <!--<h1>Sección de Diagnóstico</h1>
+          <span class="subheading">Seleccione las respuestas</span>-->
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+    <!-- Contenido Principal -->
+    <div class="container">
+      <div class="row  justify-content-center">
+        <div class="col-lg-11 col-md-11 mx-auto">
+          <div class="site-heading justify-content-center text-center">
+            <h1 class="">Formulario de registro</h1>
+              <span class="subheading">
+                A continuación deberá registrarse a nuestra plataforma, por favor llene los campos a continuación.
+              </span>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-5 justify-content-center">
+        <div class="col-lg-4 col-md-4">
+            {% if error %}
+                <p style="color: red;">{{ error }}</p>
+            {% endif%}
+          <form class="" method="POST" action="{% url 'login'%}">
+          {% crsf_tokend%}
+            <h5 id="titulo">Ingrese el número de registro</h5>
+            <div class="form-group">
+              <label for="formGroupExampleInput">Correo</label>
+              <input type="email" class="form-control" id="formGroupExampleInput" name="correo" placeholder="ppere@example.com">
+            </div>
+            <button type="submit" class="btn btn-info mt-5">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+{% endblock %}
