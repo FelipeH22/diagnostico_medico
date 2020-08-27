@@ -24,6 +24,8 @@ urlpatterns = [
     path('', include('core.urls')),
     #paths registro
     path('registro/', include('register.urls')),
+    #paths registro
+    path('diagnostico/', include('diagnostico.urls')),
 ]
 '''if settings.DEBUG:
     fromdjango.conf.urls.static import static

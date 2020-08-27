@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 class Registro (models.Model):
-    nombre = models.CharField(max_length=200, verbose_name="Título")
+    nombre = models.CharField(max_length=200, verbose_name="Nombre")
     edad = models.IntegerField(verbose_name="Edad")
     peso = models.DecimalField(max_digits=4, decimal_places=2, verbose_name="Peso")
     altura = models.DecimalField(max_digits=4, decimal_places=2, verbose_name="Estatura")
@@ -17,5 +17,5 @@ class Registro (models.Model):
         ordering = ('')
 
     def __str__(self):
-        return self.title
+        return self.nombre
 
