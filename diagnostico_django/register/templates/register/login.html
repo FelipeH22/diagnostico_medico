@@ -33,33 +33,18 @@
       </div>
       <div class="row mt-5 justify-content-center">
         <div class="col-lg-4 col-md-4">
-          <form class="" method="POST" action=""></form>
+            {% if error %}
+                <p style="color: red;">{{ error }}</p>
+            {% endif%}
+          <form class="" method="POST" action="{% url 'login'%}">
+          {% crsf_tokend%}
             <h5 id="titulo">Ingrese el número de registro</h5>
-            <div class="form-group mt-5">
-              <label for="formGroupExampleInput">Nombre</label>
-              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Pedro Perez">
-            </div>
             <div class="form-group">
               <label for="formGroupExampleInput">Correo</label>
-              <input type="email" class="form-control" id="formGroupExampleInput" placeholder="ppere@example.com">
-            </div>
-            <div class="form-group">
-              <label for="formGroupExampleInput">Edad</label>
-              <input type="password" class="form-control" id="formGroupExampleInput" placeholder="*********">
-            </div>
-            <div class="form-group">
-              <label for="formGroupExampleInput">Peso</label>
-              <input type="password" class="form-control" id="formGroupExampleInput" placeholder="*********">
-            </div>
-            <div class="form-group">
-              <label for="formGroupExampleInput">Altura</label>
-              <input type="password" class="form-control" id="formGroupExampleInput" placeholder="*********">
+              <input type="email" class="form-control" id="formGroupExampleInput" name="correo" placeholder="ppere@example.com">
             </div>
             <button type="submit" class="btn btn-info mt-5">Enviar</button>
           </form>
-        </div>
-        <div class="col-lg-4 col-md-4 offset-lg-1">
-          <img class="img-fluid avatar" src="img/consultarregistro.jpg" alt="">
         </div>
       </div>
     </div>
