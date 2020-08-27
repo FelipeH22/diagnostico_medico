@@ -17,10 +17,14 @@ amigdalitis:-
 laringitis:-
     tiene_laringitis,
     pregunta('¿Tiene perdida de la voz?'),
-    pregunta('¿Carraspeo frecuente?').
+    pregunta('¿Carraspeo frecuente?'),
+    pregunta('Tiene tos seca?').
 
 faringitis:-
-    tiene_faringitis.
+    tiene_faringitis,
+    pregunta('Tiene enrojecimiento de la faringe?'),
+    pregunta('Tiene dolor de garganta al tragar?'),
+    pregunta('Tiene ganglios inflamados en el cuello?').
 
 tiene_amigdalitis:- pregunta('¿Tiene dolor en la parte inicial de la garganta?').
 tiene_laringitis:-  pregunta('¿Tiene ronquera?').
