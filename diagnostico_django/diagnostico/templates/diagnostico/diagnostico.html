@@ -92,4 +92,17 @@
         </div>
       </div>
     </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      const cargarInformacion= () =>{
+        fetch('http://localhost:8000/diagnostico/api/v1/enfermedades/')
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(myJson) {
+          console.log('***********Respuesta del servicio*************');
+          console.log(myJson);
+        });
+      }        
+    </script>
 {% endblock %}
